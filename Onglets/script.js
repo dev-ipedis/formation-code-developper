@@ -18,7 +18,7 @@ constructor(groupNode) {
     this.firstTab = null;
     this.lastTab = null;
 
-    this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
+    this.tabs = Array.from(this.tablistNode.querySelectorAll('.tab'));
     this.tabpanels = [];
 
     for (var i = 0; i < this.tabs.length; i += 1) {
@@ -26,7 +26,6 @@ constructor(groupNode) {
         var tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
 
         tab.tabIndex = -1;
-        tab.setAttribute('aria-selected', 'false');
         this.tabpanels.push(tabpanel);
 
         tab.addEventListener('keydown', this.onKeydown.bind(this));
@@ -45,11 +44,9 @@ setSelectedTab(currentTab) {
     for (var i = 0; i < this.tabs.length; i += 1) {
         var tab = this.tabs[i];
         if (currentTab === tab) {
-            tab.setAttribute('aria-selected', 'true');
             tab.removeAttribute('tabindex');
             this.tabpanels[i].classList.remove('is-hidden');
         } else {
-            tab.setAttribute('aria-selected', 'false');
             tab.tabIndex = -1;
             this.tabpanels[i].classList.add('is-hidden');
         }
