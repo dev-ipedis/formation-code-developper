@@ -14,10 +14,8 @@ $(document).ready(function() {
           validate++;
           //Error handling for screen readers
           $(this).parent().find(".error-message").show(); //Show error message
-          addAria($(this));
         } else {
           $(this).parent().find(".error-message").hide(); //Hide error mesage
-          removeAria($(this));
         }
       });
 
@@ -28,15 +26,12 @@ $(document).ready(function() {
         var reg = /^\d+$/; //Number regex
         if (!reg.test(value)) { // Check if value of field contains only numbers
           $(element).parent().find(".error-message").show(); //display error message
-          addAria(element);
           validate++;
         } else if (value.length < limit) {
           $(element).parent().find(".error-message").show(); //display error message
-          addAria(element);
           validate++;
         } else {
           $(element).parent().find(".error-message").hide(); //hide error message
-          removeAria(element)
         }
       }
 
@@ -46,32 +41,14 @@ $(document).ready(function() {
           validate++;
           //Error handling for screen readers
           $(this).parent().find(".error-message").show(); //Show error message
-          addAria($(this));
         } else {
           $(this).parent().find(".error-message").hide(); //Hide error mesage
-          removeAria($(this));
         }
       });
 
       if (validate != 0) {
-        $("input[aria-invalid]:eq(0)").focus(); //Set focus on first invalid field
         return false;
       }
       return false;
     });
-
-    // Adding Accessibility attributes if field is invalid
-    function addAria(element) {
-      $(element).attr("aria-invalid", true); //Adding invalid statement for screen readers
-      //Associate error message to field
-      var errorid = $(element).parent().find(".error-message").attr("id");
-      $(element).attr("aria-describedby", errorid);
-    }
-
-    // Removing Accessibility Attributes if field is valid
-    function removeAria(element) {
-      $(element).removeAttr("aria-invalid"); //Remove invalid statement
-      $(element).attr("aria-describedby", ""); //Remove asxsociation error message to field
-    }
-
   });

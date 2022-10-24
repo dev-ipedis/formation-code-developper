@@ -17,33 +17,33 @@
       
             <div class="form-item signup-form_two-items" >
               <div>
-                <label for="fname">Prénom: <span aria-hidden="true">*</span></label>
-                <input aria-required="true" class="required-field" type="text" id="fname" name="fname" autocomplete="given-name" >
+                <label>Prénom: *</label>
+                <input class="required-field" type="text" id="fname" name="fname">
                 <div class="error-message" id="error-required-name">Le champ prénom est obligatoire</div>
               </div>
       
               <div class="form-item ">
-                <label for="lname">Surnom: <span aria-hidden="true">*</span></label>
-                <input aria-required="true" class="required-field" type="text" id="lname" name="lname"  autocomplete="family-name">
+                <label>Surnom: *</label>
+                <input class="required-field" type="text" id="lname" name="lname" >
                 <div class="error-message" id="error-required-lname">Le champ surnom est obligatoire</div>
               </div>
             </div>
       
             <div class="form-item signup-form_address">
               <div>
-                <label for="addr1">Adresse : </label>
-                <input id="addr1" name="addr1" autocomplete="street-address">
+                <label>Adresse : </label>
+                <input id="addr1" name="addr1">
               </div>
             </div>
       
             <div class="form-item signup-form_code_postal ">
-              <label for="code_postal">Code Postale : <span aria-hidden="true">*</span></label>
-              <input aria-required="true" class="numeric" type="tel" id="code_postal" name="code_postal" maxlength="5" autocomplete="postal-code">
+              <label>Code Postale : *</label>
+              <input class="numeric" type="tel" id="code_postal" name="code_postal" maxlength="5">
               <div class="error-message error-required-num" id="error-required-p_cp">Le code postale doit se composer de 5 chiffres</div>
             </div>
               
             <div class="form-item signup-form_country">
-              <label for="country">Pays : <span aria-hidden="true">*</span></label>
+              <label>Pays : *</label>
               <select id="country" name="country" required>
                 <option value="france">France</option>
                 <option value="Canada">Canada</option>
@@ -57,15 +57,15 @@
               <fieldset>
                 <legend>Voulez-vous recevoir notre newsletter mensuelle</legend>
                 <input type="radio" id="yy" name="newsletter" value="yes" checked>
-                <label for="yy">Oui</label>
+                <label>Oui</label>
                 <input type="radio" id="nn" name="newsletter" value="no">
-                <label for="nn">Non</label>
+                <label>Non</label>
               </fieldset>
             </div>
       
             <div class="form-item signup-form_remember dn">		
-              <input type="checkbox" id="remember" name="remember" aria-required="true" class="checkbox">
-              <label for="remember">Politique de confidentialité</label>
+              <input type="checkbox" id="remember" name="remember" class="checkbox">
+              <label>Politique de confidentialité</label>
               <div class="error-message" id="error-required-privacy">Politique de confidentialité est obligatoire</div>
             </div>
           
